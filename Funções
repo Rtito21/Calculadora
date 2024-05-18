@@ -12,16 +12,95 @@ float subtrairX (float num1, float num2)
     return result;
 }
 
-float dividirX (float num1, float num2)
-{
-    float result;
-    result = num1 / num2;
-    return result;
-}
-
 float multiplicarX (float num1, float num2)
 {
     float result;
     result = num1 * num2;
     return result;
 }
+
+float dividirX (float num1, float num2)
+{
+    float result;
+    if (num2 != 0)
+    { result = num1 / num2; }
+      else 
+      { printf ("Erro: Não é possível dividir por zero!"); }
+    return result;
+}
+
+float pocentagemX (float num1, float num2)
+{
+    float result;
+    result = (num1 * num2) / 100;
+    return result;
+}
+
+float potenciaX (float base, int expoente)
+{
+    int cont, result < expoente; cont++)
+    { resultado *= num1; }
+    return result;
+}
+
+float fatorialX (int num)
+{
+    int cont, result = 1;
+    if (num < 0)
+    { printf ("Fatorial não é usado para números negativos"); }
+    for (cont=0; cont <= num; cont++)
+    { result *= cont; }
+    return result;
+}
+
+float senoX (float num) 
+{
+    float result = 0, sinal = 1; denominador = 1;
+    float termo = num;
+    float potencia = num;
+
+    for (int n = 1; n <= 10; n++) 
+    {
+        result += termo;
+        potencia *= num * num; // Calcula a potência atual
+        sinal *= -1; // Alterna o sinal para o próximo termo
+        denominador *= (2 * n) * (2 * n + 1); // Calcula o próximo denominador
+        termo = sinal * potencia / denominador; // Calcula o próximo termo da série
+    }
+    return result;
+}
+
+float cossenoX (float num) {
+    float result = 0;
+    float termo = 1;
+    float potencia = 1;
+    float sinal = 1;
+    int denominador = 1;
+
+    for (int n = 1; n <= 10; n++) {
+        result += termo;
+        potencia *= num * num; // Calcula a potência atual
+        sinal *= -1; // Alterna o sinal para o próximo termo
+        denominador *= (2 * n) * (2 * n - 1); // Calcula o próximo denominador
+        termo = sinal * potencia / denominador; // Calcula o próximo termo da série
+    }
+    return result;
+}
+
+//Função para iniciar
+void iniciar (float result)
+{
+    result = 0;
+    printf ("Iniciando a calculadora...\tVisor exibe %.2f\nDigite a operação separa por espaço (exemplo 2.6 + 4.9):\n\t, result");
+}
+
+//Função para limpar
+void limpar (float resultado)
+{
+    result = 0;
+    printf ("Calculo limpo. Visor exibe %.2f", result);
+}
+
+//Funcão para desligar
+void desligar ()
+{ printf ("Calculadora desligada\n"); }
